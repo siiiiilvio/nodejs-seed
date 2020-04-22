@@ -1,0 +1,53 @@
+{
+    "name": "node-seed",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "dependencies": {
+        "axios": "^0.19.2",
+        "cheerio": "^1.0.0-rc.3",
+        "cron": "^1.8.2",
+        "debug": "^4.1.1",
+        "dotenv": "^8.2.0",
+        "ejs": "^3.0.2",
+        "express": "^4.17.1",
+        "helmet": "^3.22.0",
+        "less": "^3.11.1",
+        "memory-cache": "^0.2.0",
+        "mongodb": "^3.5.6",
+        "nodemon": "^2.0.3",
+        "react": "^16.13.1",
+        "react-dom": "^16.13.1"
+    },
+    "devDependencies": {
+        "@babel/cli": "^7.8.4",
+        "@babel/core": "^7.9.0",
+        "@babel/node": "^7.8.7",
+        "@babel/plugin-proposal-class-properties": "^7.8.3",
+        "@babel/polyfill": "^7.8.7",
+        "@babel/preset-env": "^7.9.5",
+        "@babel/preset-react": "^7.9.4",
+        "babel-loader": "^8.1.0",
+        "chalk": "^4.0.0",
+        "eslint": "^6.8.0",
+        "eslint-config-airbnb": "^18.1.0",
+        "eslint-plugin-import": "^2.20.2",
+        "eslint-plugin-jsx-a11y": "^6.2.3",
+        "eslint-plugin-react": "^7.19.0",
+        "eslint-plugin-react-hooks": "^2.5.1",
+        "less-watch-compiler": "^1.14.6",
+        "prettier": "^2.0.4",
+        "webpack": "^4.42.1",
+        "webpack-cli": "^3.3.11"
+    },
+    "scripts": {
+        "dev": "DEBUG=app,app:* nodemon -e js,jsx --exec babel-node src/app.js",
+        "dev-watch-css": "less-watch-compiler public/css/ public/css/",
+        "build-dist": "lessc public/css/styles.less public/css/styles.css && webpack -p",
+        "build-server": "babel -d ./build ./src -s --copy-files",
+        "build-production": "npm run build-dist && npm run build-server && node ./build/app.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC"
+}
