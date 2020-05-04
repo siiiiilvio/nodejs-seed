@@ -13,7 +13,7 @@ RUN npm install
 # Copy code over to working directory
 COPY . .
 
-EXPOSE 1111
+EXPOSE 3333
 
 # Run the build.
 CMD ["npm", "start"]
