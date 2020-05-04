@@ -45,7 +45,7 @@
         "dev-watch-css": "less-watch-compiler public/css/ public/css/",
         "build-dist": "lessc public/css/styles.less public/css/styles.css && webpack -p",
         "build-server": "babel -d ./build ./src -s --copy-files",
-        "build-production": "npm run build-dist && npm run build-server && node ./build/app.js",
+        "start": "npm run build-dist && npm run build-server && node ./build/app.js",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "author": "",
